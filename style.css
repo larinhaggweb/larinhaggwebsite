@@ -1,0 +1,497 @@
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-discord button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #c285ff;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+h2.titulo {
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: #c285ff;
+}
+
+/* ESTILO DO CABEÇALHO */
+header {
+    padding: 40px 4%;
+    position: relative;
+}
+
+header .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #535353;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+header a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+header .btn-discord button {
+    padding: 10px 20px;
+}
+
+/* ESTILO DO MENU MOBILE */
+/* Estilo da Lista de Reprodução */
+.lista-de-reproducao {
+    display: flex;
+    align-items: center;
+}
+
+.lista-de-reproducao img {
+    width: 40px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: 40px; /* Ajuste o tamanho da imagem conforme necessário */
+}
+
+/* Estilo do Botão de Menu na Lista de Reprodução */
+.lista-de-reproducao button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #c285ff;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    display: none;
+    margin-left: 20px; /* Ajuste a margem conforme necessário */
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 999;
+    font-size: 30px;
+    color: #c285ff;
+    display: none; /* Inicialmente, o botão de fechar é oculto */
+}
+
+.menu-movel {
+    background-color: rgba(85, 85, 85, 0.8);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0%;
+    overflow: hidden;
+    width: 0;
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+
+.menu-movel.aberto .btn-lista-scroll {
+    display: none;
+}
+
+.menu-movel .custom-close-icon {
+    font-size: 40px;
+    color: #c285ff;
+    display: none;
+}
+
+.menu-movel.aberto .btn-fechar-menu {
+    display: block;
+}
+
+.menu-movel.aberto {
+    width: 70%;
+    background-color: #131313;
+}
+
+.menu-movel.aberto .custom-close-icon {
+    display: block;
+}
+
+.menu-movel nav {
+    width: 100%;
+    padding: 20px;
+}
+
+.menu-movel nav ul {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.menu-movel nav ul li {
+    margin-bottom: 20px;
+}
+
+.menu-movel.aberto .btn-fechar {
+    display: block;
+}
+
+.menu-movel nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 15px 15%;
+    display: block;
+    margin-bottom: 0;
+}
+
+.menu-movel nav ul li a:hover {
+    color: #000;
+    background-color: #ac59ff;
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
+    position: relative;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    color: #fff;
+    font-size: 30px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #c285ff;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+
+section.topo-do-site .img-topo-site img {
+    width: 100%; /* Use width em vez de max-width para garantir que a imagem tenha 100% da largura */
+    height: auto;
+    object-fit: cover;
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades {
+    padding: 40px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    margin-top: 45px;
+    border-radius: 20px;
+    transition: 1.2s;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #c285ff;
+}
+
+.especialidades .especialidades-box i {
+    font-size: 70px;
+    color: #c285ff;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE */
+section.sobre {
+    padding: 40px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .img-sobre-aviso img {
+    margin-right: 10px;
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #c285ff;
+}
+
+/* ESTILO DO MAIS */
+section.mais {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #c285ff7a;
+}
+
+section.mais .flex {
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.img-port {
+    width: 360px;
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    transition: 1.2s;
+    height: 460px;
+    background-size: cover;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.img-port:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.462);
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+/* ESTILO DO RODAPE */
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #c285ff7a;
+    position: relative; /* Adicionado posicionamento relativo para elementos filhos absolutos */
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+.borda {
+    border-top: 2px solid #c285ff;
+}
+
+footer .line-footer p {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #c285ff;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: 0.2s;
+}
+
+/* Estilos para desktop */
+@media only screen and (min-width: 1021px) {
+    .lista-de-reproducao {
+        display: none;
+    }
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 1020px) {
+    .lista-de-reproducao {
+        display: block;
+    }
+
+    .menu-desktop,
+    .btn-discord {
+        display: none;
+    }
+
+    .btn-lista-fixed {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        border: none;
+        font-size: 40px;
+        color: #c285ff;
+        cursor: pointer;
+        z-index: 999;
+    }
+}
+
+/* Outros estilos existentes */
+.flex {
+    flex-direction: column-reverse;
+}
+
+h2.titulo {
+    font-size: 30px;
+    text-align: center;
+}
+
+/* TOPO DO SITE */
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+section.topo-do-site {
+    padding: 7px 8%;
+}
+
+.topo-do-site h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.topo-do-site .txt-topo-site p {
+    text-align: center;
+}
+
+.topo-do-site .img-topo-site img {
+    width: 100%;
+    max-width: none; /* Removido para garantir que a imagem ocupe 100% da largura */
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades {
+    padding: 40px 10%;
+}
+
+/* SEÇÃO SBORE */
+section.sobre {
+    padding: 80px 8%;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 34px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.sobre .txt-sobre {
+    text-align: center;
+}
+
+.img-sobre-aviso img {
+    display: none;
+}
+
+/* PORTIFOLIO */
+section.mais {
+    padding: 80px 8%;
+}
+
+.img-port {
+    margin: 0 auto;
+    width: 100;
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    transition: 1.2s;
+    height: 460px;
+    background-size: cover;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+section.mais .flex {
+    margin-top: 60px;
+    justify-content: space-around;
+    gap: 60px;
+}
+
+/* RODAPE */
+footer .flex {
+    flex-direction: column;
+    gap: 30px;
+}
+
+footer .line-footer {
+    text-align: center;
+}
+
+/* Outros estilos existentes */

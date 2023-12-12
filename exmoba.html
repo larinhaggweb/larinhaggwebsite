@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-6782990979940588">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- FIM GOOGLE FONTS -->
+    <!-- BOTSTRAPE ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- FIM BOTSTRAPE ICONS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Larinhagg Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<style>
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    min-height: 100vh; /* Alterei para min-height para garantir que o corpo seja pelo menos 100vh */
+    margin: 0; /* Removido para evitar espaçamento extra */
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap; /* Adicionei flex-wrap para melhorar o layout em telas menores */
+}
+
+.btn-discord button {
+    padding: 10px 20px; /* Padronizado o preenchimento para manter consistência */
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #c285ff;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+h2.titulo {
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: #c285ff;
+}
+
+
+
+/* ESTILO DO CABEÇALHO */
+header {
+    padding: 40px 4%;
+    position: relative; /* Adicionado posicionamento relativo para elementos filhos absolutos */
+}
+
+
+
+header .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #535353;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+header a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+header .btn-discord button {
+    padding: 10px 20px; /* Ajustar o preenchimento para criar espaço dentro do botão */
+}
+
+/* ESTILO DO MENU MOBILE */
+.btn-lista {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.menu-movel {
+    background-color: rgba(85, 85, 85, 0.8); /* Adicionei um pouco de transparência */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 998;
+    width: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 0;
+    transition: width 0.5s ease, background-color 0.5s ease; /* Adicionei a transição para a cor de fundo */
+}
+
+.menu-movel .btn-fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.menu-movel .custom-close-icon {
+    font-size: 40px;
+    color: #fff;
+    display: none; /* Inicialmente, o ícone de fechar não é exibido */
+}
+
+.menu-movel.aberto {
+    width: 70%; /* Alterado para 50% para abrir pela metade */
+    background-color: #131313; /* Adicionado um pouco de transparência quando aberto */
+}
+
+.menu-movel.aberto .custom-close-icon {
+    display: block; /* Quando o menu está aberto, o ícone de fechar é exibido */
+}
+
+.menu-movel nav {
+    width: 100%;
+    padding: 20px;
+}
+
+.menu-movel nav ul {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.menu-movel nav ul li {
+    margin-bottom: 20px;
+}
+
+.menu-movel nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 15px 15%;
+    display: block;
+    margin-bottom: 0;
+}
+
+.menu-movel nav ul li a:hover {
+    color: #000;
+    background-color: #ac59ff;
+}
+
+
+/* ... (seu estilo existente) */
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
+    position: relative; /* Adicionado posicionamento relativo para elementos filhos absolutos */
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    color: #fff;
+    font-size: 30px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #c285ff;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 20px 0px;
+    text-align: center; /* Centralizado o texto */
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adicionado para garantir que a imagem não ultrapasse a largura máxima */
+    margin: auto; /* Centralizado a imagem */
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+/* ... (seu estilo existente) */
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades {
+    padding: 40px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    margin-top: 45px;
+    border-radius: 20px;
+    transition: 1.2s;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #c285ff;
+}
+
+.especialidades .especialidades-box i {
+    font-size: 70px;
+    color: #c285ff;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE */
+section.sobre {
+    padding: 40px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .img-sobre-aviso img {
+    margin-right: 10px;
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #c285ff;
+}
+
+/* ESTILO DO MAIS */
+section.mais {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #c285ff7a;
+}
+
+section.mais .flex {
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.img-port {
+    width: 360px;
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    transition: 1.2s;
+    height: 460px;
+    background-size: cover;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.img-port:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #c285ff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.462);
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+/* ESTILO DO RODAPE */
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #c285ff7a;
+    position: relative; /* Adicionado posicionamento relativo para elementos filhos absolutos */
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+.borda {
+    border-top: 2px solid #c285ff;
+}
+
+footer .line-footer p {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #c285ff;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: 0.2s;
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 1020px) {
+
+    /* CLASSES GERAIS */
+    .flex {
+        flex-direction: column-reverse;
+    }
+
+    h2.titulo {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    /* CABEÇALHO */
+    .menu-desktop,
+    .btn-discord {
+        display: block; /* Ou qualquer outra regra para mostrar o botão */
+    }
+        
+}
+
+    /* TOPO DO SITE */
+    section.topo-do-site .flex {
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    section.topo-do-site {
+        padding: 7px 8%;
+    }
+
+    .topo-do-site h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .topo-do-site .txt-topo-site p {
+        text-align: center;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+        max-width: none; /* Removido para garantir que a imagem ocupe 100% da largura */
+    }
+
+    /* ESTILO DAS ESPECIALIDADES */
+    section.especialidades {
+        padding: 40px 10%;
+    }
+
+    /* SEÇÃO SBORE */
+    section.sobre {
+        padding: 80px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 25px;
+        text-align: center;
+    }
+
+    .sobre .txt-sobre {
+        text-align: center;
+    }
+
+    .img-sobre-aviso img {
+        display: none;
+    }
+
+    /* PORTIFOLIO */
+    section.mais {
+        padding: 80px 8%;
+    }
+
+    .img-port {
+
+        margin: 0 auto;
+    }
+
+    section.mais .flex {
+        margin-top: 60px;
+        justify-content: space-around;
+    }
+
+    section.mais .flex {
+        gap: 60px;
+    }
+
+    /* RODAPE */
+    footer .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer {
+        text-align: center;
+    }
+
+
+</style>
+
+
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/letra-l (2).png" alt="logo larihagg">
+                </a>
+            </div><!--logo-->
+            
+
+            <div class="btn-discord">
+                <a href="index.html">
+                    <button>Voltar</button>
+                </a>
+            </div>
+
+        </div><!--interface-->
+    </header>
+</html>
+
+          
+
+</section><!--sobre-->
+<section id="navegamais">
+    <section class="mais">
+        <div class="interface">
+            <h2 class="titulo">EXECUTORES <span>MOBILE</span></h2>
+            <div class="flex">
+                <div class="img-port" style="background-image: url(images/ffff.png);">
+                    <a href="https://encurtalink.online/hydrogen604">
+                        <div class="overlay">Executor hydrogen</div>
+                    </a>
+                </div>
+                <div class="img-port" style="background-image: url(images/ffff2.png);">
+                    <a href="https://encurtalink.online/fluxus604">
+                        <div class="overlay">Executor fluxus</div>
+                    </a>
+                </div>
+                <div class="img-port" style="background-image: url(images/ffff3.png);">
+                    <a href="https://encurtalink.online/codex604">
+                        <div class="overlay">Eexecutor codex</div>
+                    </a>
+                </div>
+                <div class="img-port" style="background-image: url(images/ffff4.png);">
+                    <a href="https://encurtalink.online/delta604
+                    ">
+                        <div class="overlay">Executor delta</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+                </div>
+
+            </div><!-- flex -->
+        </div><!-- interface -->
+    </section><!-- topo-do-site -->
+   
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="images/letra-l (2).png" alt="logo">
+                    </div><!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/larih.rby/"><button><i
+                                    class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.youtube.com/@slakkkkj8/featured"><button><i
+                                    class="bi bi-youtube"></i></button></a>
+                        <a href="https://discord.gg/gr8NM9jWV6"><button><i class="bi bi-discord"></i></button></a>
+                    </div><!--btn-social-->
+                </div>
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p>Totalmente seguro.</p>
+            </div><!--line-footer-->
+        </div><!--interface-->
+    </footer>
+
+
+
+    <main>
+        <section id="inicio">
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                </div><!-- flex -->
+            </div><!-- interface -->
+        </section><!-- topo-do-site -->
+    </footer>
+
+</body>
+</html>
